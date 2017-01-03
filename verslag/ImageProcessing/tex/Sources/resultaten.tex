@@ -1,0 +1,182 @@
+ \chapter{Resultaten}
+
+\section{Opgave 1}
+	\subsection{Doelstelling}
+		\par Deze opgave bestaat eruit om de afbeelding van een Smurf zodanig te bewerken dat de blauwe kleur wordt
+		veranderd in een gele kleur. Er dient opgemerkt te worden dat de blauwe kleur waaruit de Smurf bestaat niet \'e\'en type
+		blauw is, maar bestaat uit verschillende tinten. Om het blauw naar het geel om te vormen moet dus rekening gehouden
+		worden met een bepaald bereik wat de kleur betrefd. 		
+	\subsection{Werkwijze en resultaat}
+		\subsubsection{Eerste aanpak}
+			\par Bij de eerste aanpak werd gekozen om alle kleuren die tussen bepaalde grenswaarden vallen te vervangen door
+			een gele kleur. De grenswaarden werden vastgesteld door middel van het programma ColorPic. Dit programma maakt het
+			mogelijk om aan de hand van een colorpicker de kleur van een bepaalde pixel op het scherm te bepalen. Proefondervindelijk
+			werden zo volgende grenzen bepaald: \bigskip
+			
+				\begin{table}[H]
+				\centering
+				\begin{tabular}{ccc}
+				\hline
+				Kleur & Ondergrens & Bovengrens \\ \hline
+				Rood  & 0          & 115        \\
+				Groen & 100        & 200        \\
+				Blauw & 0          & 255        \\ \hline			
+				\end{tabular}
+				\caption{Grenswaarden voor blauwe kleur}
+				\end{table}
+			
+			\newpage
+			\par Om de blauwe kleur naar geel te veranderen werd elke pixel van de afbeelding doorlopen door middel van een for-structuur.
+			Elke pixel wordt gecontroleerd of de kleur tussen de grenswaarden valt. Indien dit het geval is wordt de kleur veranderd naar geel.
+			Om de kleur van elke pixel te controleren moest afzonderlijk naar de rood-waarde, groen-waarde en blauw-waarde van elke pixel gekeken worden.
+			Deze waarden liggen elk tussen een waarde van 0 en 255. Als gele kleur werd gekozen voor het geel dat overeenstemt met rgb-waarde 255,255,0. 
+			De Matlabinplementatie is weergegeven in onderstaand codefragment:\bigskip			
+			
+			\lstinputlisting[caption=Matlab-code \'e\'erste aanpak]{Matlab/Smurf_1.m}
+			
+			\newpage
+			
+			\par Het resultaat van deze code is te zien in onderstaande figuur: 
+			
+				\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.95\textwidth]{Images/resultaat_smurf_1.png}
+				\caption{Resultaat kleursverandering Smurf: eerste aanpak}
+				\label{fig:smurf_eerste_aanpak}
+				\end{figure}
+			
+			\par Er is op te merken dat dit een vrij drastische verandering is. Het blauw bestaat namelijk niet uit \'e\'en type blauw, maar uit een mix van
+			verschillende tinten blauw en het wordt vervangen door slechts \'e\'en type geel. Dit vormt geen aangenaam gevoel voor het menselijk ook. Men neemt 
+			dit waar als een niet-natuurlijk beeld. Om dit probleem op te lossen, en het eindresultaat er natuurlijker laten uit te zien werd een tweede aanpak 
+			aangewend.	
+				
+		\subsubsection{Tweede aanpak}
+			\par Het resultaat van de eerste aanpak was voor het menselijk oog niet zo goed. Om dit te verbeteren werd gekozen om bij de kleursverandering niet voor
+			een vaste kleur geel te kiezen, maar om de rgb-waarden van de gele kleur te laten afhangen van de blauwe kleur. Dit wordt gedaan door bij de blauwe kleur
+			een bepaalde waarde op te tellen of af te trekken. Om negatieve waarden te vermijden wordt steeds de absolute waarde genomen. Deze waarden werden 
+			experimenteel bepaald en leverden volgend resultaat: \noindent
+			
+					\begin{table}[H]
+					\centering
+					\begin{tabular}{cc}
+					\hline
+					Kleur & Offset   	  \\ \hline
+					Rood  & 255 (vast)    \\
+					Groen & +54           \\
+					Blauw & -215          \\ \hline			
+					\end{tabular}
+					\caption{Ofset voor conversie blauwe kleur naar gele kleur}
+					\end{table}
+			\newpage
+			
+			\par Ook hier wordt elke pixel \'e\'en voor \'e\'en overlopen en gecontroleerd of de rgb-waarden binnen de grenswaarden vallen. Indien dit het geval is 
+			wordt er bij de huidige waarde van de pixel een ofset bijgeteld zoals is weergegeven in bovenstaande tabel. De Matlab-code van deze aanpak wordt hieronder
+			weergegeven: \bigskip
+			
+			\lstinputlisting[caption=Matlab-code tweede aanpak]{Matlab/Smurf_2.m}
+			
+			\newpage
+			
+			\par Het resultaat van deze aanpak is te zien in volgende figuur:
+			
+				\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.95\textwidth]{Images/resultaat_smurf_2.png}
+				\caption{Resultaat kleursverandering Smurf: tweede aanpak}
+				\label{fig:smurf_tweede_aanpak}
+				\end{figure}
+			
+			\par Er valt op te merken dat bovenstaande afbeelding veel natuurlijker aanvoelt voor het oog. Dit komt omdat het niet enkel uit \'e\'en tint geel bestaat,
+			maar uit meerdere tinten geel wat een v\'e\'el rustiger effect geeft.
+			
+		
+
+\section{Opgave 2}
+	\subsection{Kleursverandering}
+
+	\subsubsection{Doelstelling}
+	
+		\par in deze opgave is het de bedoeling om het groene scherm in de achtergrond te veranderen naar een grijze achtergrond. Net zoals bij de afbeelding van de Smurf
+		bestaat het groen hier niet uit \'e\'en tint groen, maar meerde tinten groen. Om het groen naar grijs om te vormen moet dus rekening gehouden
+		worden met een bepaald kleurbereik wat de kleur betrefd. \noindent
+	
+	\subsubsection{Werkwijze en resultaat}
+	
+		\par Net zoals bij de opgave met de Smurf-afbeelding wordt hier ook eerst experimenteel het groene kleurbereik vastgesteld. Dit levert volgend resultaat:
+		\noindent
+				\begin{table}[H]
+				\centering
+				\begin{tabular}{ccc}
+				\hline
+				Kleur & Ondergrens & Bovengrens \\ \hline
+				Rood  & 0          & 115        \\
+				Groen & 100        & 200        \\
+				Blauw & 0          & 255        \\ \hline			
+				\end{tabular}
+				\caption{Grenswaarden voor blauwe kleur}
+				\end{table}
+				
+		\par Net als bij de opgave waarbij de Smurf van kleur veranderd moest worden, wordt ook hier pixel per pixel overlopen of de kleur van in het kleurbereik van groen valt.
+		Indien dit het geval is wordt deze pixel vervangen door een grijze kleur met rgb-waarde 180,180,180. Onderstaande matlabcode werd gegenereerd om de kleursverandering toe 
+		te passen: \bigskip
+		
+			\lstinputlisting[caption=Matlab-code achtergrond veranderen]{Matlab/opgave_2_1.m}
+		
+		\newpage
+		
+		\par Het resultaat van deze aanpak is te zien in volgende figuur:
+			
+				\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.95\textwidth]{Images/resultaat_chromakey.png}
+				\caption{Resultaat achtergrond veranderen}
+				\label{fig:achtergrond_veranderen}
+				\end{figure}
+		
+		\par Uit bovenstaande figuur is af te leiden dat niet allen het groene scherm in de achtergrond veranderd is, maar ook enkele andere pixels in de achtergornd. Dit komt omdat
+		er sommige stukken in de achtergrond nog een groene kleur bevat. Alles wat in het bereik van de groene kleur valt zal veranderd worden naar grijs.
+		\noindent
+		
+		
+		
+		\subsection{Kleursverandering: uitbreiding}
+		
+		\subsubsection{Doelstelling}
+			
+			\par In de vorige opgave werd steeds iedere pixel in de afbeelding vergeleken om na te gaan of deze in het bereik valt van de groene kleur. Dit heeft als nadeel dat het 
+			bereik experimenteel bepaald moet worden en vervolgens handmatig in de code dient ingesteld te worden. Met zou opteren voor een minder omslachtig proces dat minstens een 
+			even goed resultaat aflevert. Wanneer men in een tv-studio gebruikt maakt van een groen scherm, wil men dit doorgaans niet gebruiken om het door \'e\'en andere kleur te 
+			vervangen. Meestal gebruikt men dit om de achtergrond te veranderen. In deze uitbreiding zal ook geprobeerd worden om de groene achtergornd te veranderen naar een afbeelding
+			met wolkjes. 
+			
+			\newpage 
+		\subsubsection{Werkwijze en resultaat}
+			
+			\par De werkwijze is compleet verschillend met de werkwijze die gevolgd werd in bovenstaande opgaven. In de eerste plaats worden beide afbeeldingen ingeladen in de code. 
+			vervolgens wordt ook al plaats gereserveerd om het eindresultaat in op te slaan. Vervolgens gaan we de kleurwaarden per pixel omzetten naar percentages. Dit wil zeggen dat
+			we de rgb-waarden die vari\"eren van 0 tot 255 gaan delen door 255 zodat we het percentage bekomen, een getal tussen 0 en 1. \noindent \bigskip
+			
+			\par Vervolgens gaan we de groenwaarde van elke pixel. dit doen we door middel van de kleurkanalen met elkaar te vergelijken. Dit gebeurt aan de hand van volgende formule:
+			groenwaarde = groen x (groen - rood) x (groen - blauw). Hierna wordt ook rekening gehouden met een bepaalde threshold, zodat we niet 1 tint groen bekijken, maar een aantal tinten
+			groen die afgelijd zijn van het gemiddelde. Om na te gaan of een pixel groen is stellen we opnieuw een matrix op met daarin een 0 als de pixel niet groen is, en een 1 als de
+			pixel wel groen is. De beslissing of een pixel al dan niet groen is wordt genomen op basis van de threshold. Wanneer de groenwaarde groter is dan de threshold, dan zal de pixel
+			als groen bestempeld worden. \noindent \bigskip 
+			
+			\par Nu zullen voor elke kleur (R,G en B) de afbeeldingen overlopen worden. Per kleur zullen de pixels van het studiobeeld overschreven worden met die van de achtergrondafbeelding 
+			indien er in de IsGroen matrix een 1 staat op de plaats met de overeenstemmende pixel. Het resultaat zal opgeslagen worden in een nieuwe variabale.
+		    De Matlabcode die bij deze werkwijze hoort, wordt hieronder weergegeven:  \bigskip
+			
+			\lstinputlisting[caption=Matlab-code achtergrond veranderen]{Matlab/opgave_2_extra.m}
+			
+			\par Het resultaat van deze aanpak is te zien in volgende figuur:
+			
+				\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.95\textwidth]{Images/resultaat_chromakey_extra.png}
+				\caption{Resultaat achtergrond veranderen - uitbreiding}
+				\label{fig:resultaat_chromakey_extra}
+				\end{figure}
+				
+			\par Men kan opmerken dat inderdaad de groene achtergrond veranderd is naar de wolkjes. Men dient wel op te merken dat beide afbeeldingen even groot moeten zijn om bovenstaande code
+			correct te kunnen uitvoeren. De code is dus nog niet optimaal, maar maakt het wel al mogelijk de achtergrond te veranderen zonder dat er een kleurenbereik ingesteld dient te worden.
+			

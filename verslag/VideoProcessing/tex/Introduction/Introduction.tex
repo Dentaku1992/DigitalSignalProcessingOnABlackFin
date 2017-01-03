@@ -1,0 +1,22 @@
+\chapter{Inleiding}
+
+\par DSP staat voor Digital Signal Processing, ofwel digitale signaalverwerking. Deze signalen kunnen zowel beeld- als audiomateriaal zijn, in dit labo is gekozen om het videodomein verder te bestuderen. De opdracht bestond uit de real-time verwerking en filtering van een videosignaal. Dit houdt onder meer in dat een signaal binnengelezen, geanalyseerd, gefilterd of aangepast en terug uitgestuurd moet worden, en dit in een zo kort mogelijke tijdspanne om de real-time factor te respecteren.
+
+\par Gedurende het laboproject werd gewerkt met een beeldfragment van een aflevering van de Smurfen. In dit fragment dienen alle Smurfen een huidskleurverandering te ondergaan  zodat het uitgangssignaal een verzameling gele smurfen weergeeft. Het middel om dit te bereiken is de BlackFin EZ-Kit Lite met de BF-561 dual-core processor, met bijbehorende DSP++ IDE. Een krachtige processor in combinatie met een eenvoudige werkomgeving belooft een vlotte ervaring te geven.
+
+\chapter{Doelstelling}
+
+\par Het doel van dit DSP project is om met behulp van de Blackfin BF-561 DSP processor een kleurenconversie toe te passen op een realtime videosignaal. Dit videosignaal is afkomstig van een digitale camera en wordt via het NTSC protocol uitgestuurd. De kleursverandering die moet doorgevoerd worden is een transformatie van blauw (zoals bij de Smurfen) naar geel. 
+
+\par Als voorbereiding voor dit labo werden reeds enkele DSP-algoritmes uitgevoerd in het simulatieprogramma Matlab. Aan de hand van de opgedane kennis kan het DSP alghoritme tijdens dit labo ge\"implementeerd worden op een DSP processor aan de hand van de programmeertaal C++.
+
+\par Naast de praktische implementatie wordt er ook een studie gedaan naar kleurenruimtes en -converties, alsook een theoretische studie naar technieken die de performatie en de kwaliteit van het eindreslultaat kunnen vergroten door gebruik te maken van dezelfde hardware. Er werd dus theoretisch gezocht naar een zo performant mogelijk algoritme. 
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.85\textwidth]{Introduction/resultaat_smurf_2.png}
+		\caption{Huidskleurverandering bij een smurf}
+		\label{fig:smurf}
+	\end{figure}
+
+

@@ -1,0 +1,44 @@
+\chapter{Inleiding}
+
+\section{Doelstelling}
+\par Het doel van deze opdracht is om via het Matlab pakket kennis te maken met de basisprincipes van videoprocessing.
+Deze kennismaking is de basis van de vervolgopdracht waarbij gebruikt gemaakt wordt van een DSPprocessor om live
+videobeelden realtime te bewerken. Een videosignaal bestaat uit verschillende frames. Wanneer men dus een videosignaal
+wil bewerken dient men dit frame per frame aan te pakken. Elk frame kan gezien worden als een afbeelding waarop \'e\'en of 
+meerdere bewerkingen gebeuren. Aan de hand van het Matlab pakket wordt kennis verworven in DSP-technieken om kleuren in
+afbeeldingen te detecteren en veranderen. \bigskip
+
+\par In het eerste deel van deze opdracht is het de bedoeling om aan de hand van het programma Matlab inzicht te verwerven
+in het bewerken van afbeeldingen (frames). Nadien zal in het tweede deel hetzelfde principe realtime toegepast worden op 
+videobeelden aan de hand van een DSP-processor, namelijk de BlackFin BF-561.
+
+\section {Achtergrond}
+
+\subsection{Chromakey}
+
+\par Chromakey, ook wel kleurwaarde genoemd is een techniek die v\'e\'el gebruikt wordt in de tv- en filmwereld. Tijdens het 
+filmen wordt als achtergrond een scherm gebruikt dat een bepaalde effen kleur heeft. Vervolgens wordt via een computer of DSP-processor
+deze achtergrond veranderd door een andere achtergrond die afkomstig kan zijn van een andere videobron of afbeelding. De meest gebruikte
+kleuren voor deze achtergrond zijn blauw en groen. De reden hiervoor is dat de kleuren blauw en groen het meest verschillen in tint (hue) van
+de kleur van de menselijke huid. \bigskip
+
+\par De chromakey techniek wordt al gebruikt sinds de jaren '90 om speciale effecten in films mogelijk te maken. Ook bij het 
+weerbericht en het journaal maakt men vaak gebruik van chromakey om extra informatie achter de presentator weer te geven. Het is zowel mogelijk
+om live te achtergrond te wijzigen als nadien. \bigskip
+
+\par De chromakey techniek brengt ook een aantal problemen met zich mee. Zo speelt de belichting van de set een belangrijke
+rol tijdens het filmen. Het vormen van schaduw op het scherm kan ervoor zorgen dat dit van kleur veranderd, namelijk het wordt
+donkerder waardoor het door het bewerkingsporgramma niet meer herkend wordt als de kleur die dient gewijzigd te worden. Een ander
+probleem dat zich voordoet is dat te dunne objecten (bewegende haren) moeilijker kunnen worden waargenomen door de computer. Dit kan zorgen
+voor een ongewenst effect. Tot slot dient er ook op gelet te worden dat de presentator zijn kleding geen element bevat in de kleur van het 
+scherm dat gebruikt wordt. Anders zou dit ook vervangen worden, net als de achtergrond.\bigskip
+
+\par Naast het gebruik chromakey in de achtergrond is het ook mogelijk om in een videofragment een bepaalde kleur te vervangen door een andere
+kleur. Deze techniek kan toegepast worden om oude zwart-wit films om te vormen naar een minimalistische kleurenfilm. Dit kan gedaan worden door
+aan een bepaalde grijswaarde een bepaalde kleur toe te kennen. Hierbij speelt de belichting en schaduwen vaak een nadelige rol.
+
+\subsection {Matlab}
+
+\par Matlab is een computerprogramma dat het mogelijk maakt om allerhande wiskundige toepassingen te simuleren. Aan de basis hiervan ligt de 
+programmeertaal M-code. Via Matlab is het mogelijk om afbeeldingen in te lezen en vervolgens hierop bewerkingen uit te voeren. Vervolgens kan 
+de bewerkte afbeelding terug worden weergegeven. 

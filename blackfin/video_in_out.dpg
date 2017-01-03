@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding='ISO-8859-1'?>
+<visualdsp-project-group generated="Wed Dec 10 13:45:49 2014" version="1.0.0.0" active-project="video_in_out">
+	<project name="video_in_out" file=".\Video_INOUT.dpj">
+	</project>
+	<project name="CoreA" file=".\Core A\CoreA.dpj">
+	</project>
+	<project name="CoreB" file=".\Core B\CoreB.dpj">
+	</project>
+	<project name="sml2" file=".\Shared Memory L2\L2_SRAM.dpj">
+	</project>
+	<project name="sml3" file=".\Shared Memory L3\L3_SDRAM.dpj">
+	</project>
+</visualdsp-project-group>
