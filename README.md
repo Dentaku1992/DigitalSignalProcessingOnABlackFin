@@ -16,7 +16,7 @@ In addition to the practical implementation, a small study of color spaces and -
 ![Line processing](https://github.com/Dentaku1992/DigitalSignalProcessingOnABlackFin/raw/master/verslag/VideoProcessing/tex/chapters/Chapter4/Images/DMA_line_processing.png)
 
 ###Macro block processing
-![Macro block processing](github-windows://openRepo/https://github.com/Dentaku1992/DigitalSignalProcessingOnABlackFin?branch=master&filepath=verslag%2FVideoProcessing%2Ftex%2Fchapters%2FChapter4%2FImages%2FDMA_block_matrix.png)
+![Macro block processing](https://raw.githubusercontent.com/Dentaku1992/DigitalSignalProcessingOnABlackFin/master/verslag/VideoProcessing/tex/chapters/Chapter4/Images/DMA_block_matrix.png)
 
 ###Interframe processing
 ![Interframe processing](https://github.com/Dentaku1992/DigitalSignalProcessingOnABlackFin/raw/master/verslag/VideoProcessing/tex/chapters/Chapter4/Images/DMA_interframe_processing.png)
